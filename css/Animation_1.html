@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMATION</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            background-color: rgb(48, 129, 200);
+            transition-duration: 3s;
+        }
+        #Translate:hover{ 
+            /*transform: translate(50px,200px);*/ /* from x axis and y axis */
+            transform: translateX(12px); /*animation at right side*/
+
+            background-color: #765d8f;
+        }
+        #Rotate:hover{
+            transform: rotate(90deg);
+            background-color: #765d8f;
+        }
+        #Rotate3D:hover{
+            transform: rotate3d(1,1,0,360deg);
+            background-color: aqua;
+        }
+        #Skew:hover{
+            transform: skew(30deg);
+            background-color: bisque; 
+            transition-delay: 2s; /* after 2 sec transition will be start */
+        }
+        #Scale:hover{
+            transform: scale(0.5,0.5);
+            transition-timing-function: ease-in;
+            /*transform: scale(1.5,1.5);*/  /* do outside of box*/
+        }
+        #Opacity:hover
+        {
+            /* by default 1 it is show when it is under o.7*/
+            opacity:0.6;
+        }
+        #RGBA:hover{
+                /*transition-property:background-color;  this is use with name  like this*/
+                background-color:rgba(128,128,0,0.5);
+        }
+        #BoxShadow:hover{
+            /*transition-property: box-shadow;
+            transition-duration: 3s;
+            transition-timing-function: ease-in;
+            transition-delay: 1s;*/
+            /*transition short hand property*/
+            transition: box-shadow 3s ease-in 1s;
+            /* only give z bcz we want in back*/
+            box-shadow: 0px 0px 30px blue;
+            border-radius: 100px;
+            font-size: 30px;
+        }
+        #TextShadow:hover {
+            text-shadow:3px 3px 3px yellow;
+        }#BorderRadius:hover{
+			border-radius:50%;
+		}
+        #OverFlow{
+            overflow:scroll;
+        }
+
+    </style>
+</head>
+<body>
+
+        <div id="Translate">Translate</div><hr />
+        <div id="Rotate">Rotate</div><hr />
+		<div id="Rotate3D">Rotate 3d</div><hr />
+        <div id="Skew">Skew</div><hr />
+        <div id="Scale">Scale</div><hr/>
+        <div id="Opacity">Opacity</div><hr/>
+        <div id="RGBA">RGBA</div><hr/>
+        <div id="BoxShadow">Box-Shadow</div><hr/>
+        <div id="TextShadow">Text-Shadow</div><hr/>
+		<div id="BorderRadius">Border Radius</div><hr/>
+		<div id="OverFlow">Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow Overflow </div><hr/>
+    
+</body>
+</html>

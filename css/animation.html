@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title> 
+    <style>
+        div{
+            
+            width: 10vw;
+            height: 10vh;
+            background-color: aquamarine;
+            color: tomato;
+            animation-name: demo;
+            position: relative;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes demo{
+            0%{transform: rotate(0deg); background-color: aqua;left: 0; top:0;}
+            25%{transform: rotate(90deg); background-color: blue; left:10vw; top:100px;}
+            50%{transform: rotate(180deg); background-color: brown; left:9vw; top:200px;}
+            75%{transform: rotate(270deg); background-color: chartreuse;left:5vw; top:50px;}
+            100%{transform: rotate(360deg); background-color: thistle; left: 0;top:0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="skew"></div>
+</body>
+</html>

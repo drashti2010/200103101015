@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#but').click(function () {
+                /*$('#animate').animate(
+                    {
+                        opacity: 0.5,
+                        width: '300px'
+                    },"fast")*/
+                //This will execute one by one
+                $('#animate').animate({ opacity: 0.3 }, 3000);
+                $('#animate').animate({ opacity: 0.9 }, 3000);
+                $('#animate').animate({ width: '400px' }, 6000);
+            })
+        });
+    </script>
+</head>
+<body>
+    <button id="but">ANIMATE</button>
+    <div id="animate">hello guys! I am drashti I am from Ahemdabad I want to Become web devloper I am drashti I am
+        Drashti My Age is 19 You Are Inteligent I have Small Group of friends hello guys! I am drashti I am from
+        Ahemdabad I want to Become web devloper Ahemdabad I want to Become web devloper I am drashti I am Drashti My Age
+        is 19 You Are Inteligent I have Small Group of friends
+
+    </div>
+</body>
+
+</html>

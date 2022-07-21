@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- val === '';      // actual value is an empty string    click
+        val === null;    // actual value is null (absence of any value)  notclick-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+    <script>
+        var $FNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
+        var $FullNameRegEx = /^([a-zA-Z ]{2,40})$/;
+        var $BankAccountNameRegEx = /^([a-zA-Z ]{2,60})$/;
+        var $PasswordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,12}$/;
+
+        var $EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/i;
+        var $ConNoRegEx = /^([0-9]{10})$/;
+        var $AgeRegEx = /^([0-9]{1,2})$/;
+        var $AadhaarNoRegEx = /^([0-9]{12})$/;
+        var $GSTNoRegEx = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+        var $IndianDrivingLicenseNoRegEx = /^([A-Z]{2,3}[-/0-9]{8,13})$/;
+        var $IndianVehicleRegNoRegEx = /^([A-Z]{2}[0-9]{1,2}[A-Z]{1,3}[0-9]{1,4})$/;
+        var $PincodeRegEx = /^[1-9][0-9]{5,6}$/;
+        var $PANNoRegEx = /^[A-Z]{3}[ABCFGHLJPT][A-Z][0-9]{4}[A-Z]$/;
+        var $IFSCCodeRegEx = /^[A-Za-z]{4}0[A-Z0-9a-z]{6}$/;
+        var $BankAccountNoRegEx = /^([0-9]{9,18})$/;
+        var $LatitudeLongitude = /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,8})?|180(?:\.0{1,8})?)$/;
+
+        $(document).ready(function () {
+            /*For Name */
+            $("#Name").blur(function () {
+                $("#namevalidation").empty();
+                if ($(this).val() == "") {
+                    console.log("empry")
+                    console.log("jgcvhdbc");
+                    $("#namevalidation").text("requried");
+                }
+                else {
+                    if (!$(this).val().match($FullNameRegEx)) {
+                        $("#namevalidation").text("Please Write Name");
+                    }
+                }
+            });
+            $("#Name").keypress(function (e) {
+                $("#namevalidation").empty();
+                var flag = ((e.which >= 65 && e.which <= 90) || (e.which >= 97 && e.which <= 121));
+                if (flag == false) {
+                    $("#namevalidation").text("Please Enter Correct Name")
+                }
+                return flag; //number are not written
+            });
+            /*for contact no*/
+            /*if ($("#contactNo").val() == null) { 
+                 // it is not require bcz we write blur means after lose focus
+                 alert("hru")
+                $("#cv").text("requried");
+            }*/
+            $("#ContactNo").blur(function () {
+
+                $("#cv").empty();
+                if ($(this).val() == "") {
+                    console.log("contact")
+                    $("#cv").text("requried");
+                }
+                else {
+                    if (!$(this).val().match($ConNoRegEx)) {
+                        $("#cv").text("Please Write contact no");
+                    }
+                }
+            });
+            $("#ContactNo").keypress(function (e) {
+                $("#cv").empty();
+                var flag = ((e.which >= 48 && e.which <= 57));
+                if (flag == false) {
+                    $("#cv").text("Please Enter Correct Contact No")
+                }
+                return flag
+            });
+            $("#EmailId").blur(function () {
+                $("#ev").empty();
+                if ($(this).val() == "") {
+                    $("#ev").text("requried");
+                }
+                else {
+                    if (!$(this).val().match($EmailIdRegEx)) {
+                        $("#ev").text("Please Write email id ");
+                    }
+                }
+            });
+            $("#ContactMsg").blur(function () {
+                $("#mv").empty();
+                if ($(this).val() == "") {
+                    $("#mv").text("requried");
+                }
+                else {
+                    if ($(this).val().length > 300) {
+                        $("#mv").text("Stop Here..");
+                    }
+                }
+            });
+            var NameFlag = false;
+            var EmailFlag = false;
+            var ContactFlag = false;
+            var MsgFlag = false;
+            $("#btn").click(function () {
+                $("#namevalidation").empty();
+                if ($("#Name").val() == "") {
+                    console.log("duueg");
+                    $("#namevalidation").text("requried");
+                    NameFlag = false;
+                }
+                else {
+                    if (!$("#Name").val().match($FullNameRegEx)) {
+                        $("#namevalidation").text("Please Write Name");
+                        NameFlag = false;
+                    }
+                    else {
+                        NameFlag = true;
+                    }
+                }
+                $("#cv").empty();
+                if ($("#ContactNo").val() == "") {
+                    $("#cv").html("requried");
+                    ContactFlag = false;
+                }
+                else {
+                    if (!$("#ContactNo").val().match($ConNoRegEx)) {
+                        $("#cv").text("Please Write contact no...");
+                        ContactFlag = false;
+                    }
+                    else {
+                        ContactFlag = true;
+                    }
+                }
+                
+
+                $("#ev").empty();
+                if ($("#EmailId").val() == "") {
+                    $("#ev").html("requried");
+                    EmailFlag = false;
+                }
+                else {
+                    if (!$("#EmailId").val().match($EmailIdRegEx)) {
+                        $("#ev").text("Please Write email id ...");
+                        EmailFlag = false;
+                    }
+                    else {
+                        EmailFlag = true;
+                    }
+                }
+                $("#mv").empty();
+                if ($("#ContactMsg").val() == "") {
+                    $("#mv").text("requried");
+                    MsgFlag = false;
+                }
+                else {
+                    if ($("#ContactMsg").val().length > 300) {
+                        $("#mv").text("Stop Here..");
+                        MsgFlag = false;
+                    }
+                    else {
+                        MsgFlag = true;
+                    }
+                }
+                if (NameFlag == true && EmailFlag == true && ContactFlag == true && MsgFlag == true) {
+                    $("input,textarea").val("");
+                    alert("Form submited Sccusfully");
+                }
+                else {
+                    alert("First, Fill Correct Detalies");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="Name" autofocus placeholder="enter the name " maxlength="40" /><br />
+    <small id="namevalidation"></small>
+    <hr />
+    <input type="text" id="ContactNo" placeholder="enter the contact no" maxlength="10" /><br />
+    <small id="cv"></small>
+    <hr />
+    <input type="text" id="EmailId" placeholder="enter the email id" maxlength="50" /><br />
+    <small id="ev"></small>
+    <hr />
+    <textarea rows="5" id="ContactMsg" placeholder="enter the contact" maxlength="300"></textarea><br />
+    <small id="mv"></small>
+    <hr />
+    <button id="btn">submit here..</button>
+</body>
+
+</html>

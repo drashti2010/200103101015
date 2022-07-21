@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#input").blur(function () {  //blur means we are not in the box and go in another
+                alert("This text box has lost its focus.");
+                $("#input").css('background-color', 'pink');
+            });
+            $("#input").focus(function () {  //focus means click in the box
+                $("#input").css('background-color', 'blue');
+            });
+            $("#keypress").keypress(function(){
+                alert("keypress");
+            });
+            $("#keyup").keyup(function(){
+                alert("keyup");
+            })
+            $("#keydown").keydown(function(){ //if you remove name then also alert
+                alert("keydown");
+            })
+        });  
+    </script>
+</head>
+
+<body>
+    Enter your name: <input type="text" id="input">
+    <input type="text" placeholder="keypress" id="keypress">
+    <input type="text" placeholder="keyup" id="keyup">
+    <input type="text" placeholder="keydown" id="keydown">
+
+
+</body>
+
+</html>

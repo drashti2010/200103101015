@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="g" style="height: 250px;width:250px;background-color:pink;"></div>
+    <div><input type="button" value="Alert" onclick="a()" /></div>
+    <hr>
+    <div><input type="button" value="confirm" onclick="co()"></div>
+    <hr>
+    <div><input type="button" value="prompt" onclick="pro()"></div>
+    <hr />
+    <input type="button" value="Body Bg black" onclick="bodyBGblack()" />
+    <input type="button" value="Div Bg Green" onclick="divBGGreen()" />
+    <hr />
+    <input type="button" value="Body Bg prompt" onclick="bodyBG()" />
+    <input type="button" value="Div Bg prompt" onclick="divBG()" />
+    <hr />
+    <input type="color" id="cp1" onchange="bodyBGcp1()" />
+    <input type="color" id="cp2" onchange="divBGcp2()" />
+    <script type="text/javascript">
+        function a() {
+            alert("heyaaaaa");
+        }
+        function co() {
+            if (confirm("Are You SUre...")) {
+                alert("yes");
+            }
+            else {
+                alert("noo....");
+            }
+        }
+        function pro() {
+            var fName = prompt("Enter Firstname Here..");
+            var lName = prompt("Enter Lastname Here..");
+            alert(fName + " " + lName);
+        }
+        function bodyBGblack() {
+            document.body.style.backgroundColor = "black";
+        }
+        function divBGGreen() {
+            document.getElementById("g").style.backgroundColor = "green";
+        }
+        function bodyBG() {
+            document.body.style.backgroundColor = prompt("Enter Color Here..");
+        }
+        function divBG() {
+            document.getElementById("g").style.backgroundColor = prompt("Enter Color Here");
+        }
+        function bodyBGcp1(){
+            document.body.style.backgroundColor=document.getElementById("cp1").value;
+        }
+        function divBGcp2(){
+            document.getElementById("g").style.backgroundColor=document.getElementById("cp1").value;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /*.attr means which is in the tag like href in button disabled*/
+            $("#show").attr("disabled", true);/*Means Butoon Become disabled*/
+            $("#hide").click(function () {
+                $("#box").hide(3000);
+                $(this).attr("disabled", true);
+                $("#show").attr("disabled", false);
+                $("#toggle").text("Show");
+            })
+            $("#show").click(function () {
+                $("#box").show(3000);
+                $(this).attr("disabled", true);
+                $("#hide").attr("disabled", false);
+                $("#toggle").text("Hide");
+            })
+            $("#toggle").click(function () {
+                $("#box").toggle(3000);
+                if ($(this).text() == "Hide") {
+                    $(this).text("Show");
+                    $("#hide").attr("disabled", true);
+                    $("#show").attr("disabled", false);
+                }
+                else {
+                    $(this).text("Hide");
+                    $("#show").attr("disabled", true);
+                    $("#hide").attr("disabled", false);
+                }
+            })
+            $("#minus").click(function () {
+                var hei = parseInt($("#box").css("height"));
+                if (hei >= 20) {
+                    hei -= 10;
+                    $("#box").css("height", hei);
+                    $("#box").css("width", hei);
+                }
+                else {
+                    alert("Smaller Than This is Not Possible (Less than 20px Not Popsiible)");
+                }
+            })
+            $("#plus").click(function () {
+                var hei = parseInt($("#box").css("height"));
+                if (hei <= 300) {
+                    hei += 10;
+                    $("#box").css("height", hei);
+                    $("#box").css("width", hei);
+                }
+                else {
+                    alert("Biger Than This is Not Possible (Less than 300px Not Popsiible)");
+                }
+            })
+            $("#t").click(function(){
+                S("#box").toggle(1000);
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="box" style="height:300px;width:300px;background-color:blue;"></div>
+    <hr />
+    <button id="hide">Hide</button><button id="show">Show</button>
+    <hr />
+    <button id="toggle">Hide</button>
+    <hr />
+    <button id="t">Toggle</button>
+    <hr />
+    <button id="plus" style="font-size:xx-large" ;><b>+</b></button>
+    <button id="minus" style="font-size:xx-large;"><b>-</b></button>
+    <hr />
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+
+<!-- Float left it means this box is do in left not the box under this main box -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout-2</title>
+    <style>
+        #logo{
+            float: left;
+            width: 50%;
+            height: 30px;
+            margin-bottom: 1%;
+            background-color: aqua;
+        }
+        #navigation{
+            float: left;
+            width: 50%;
+            height: 30px;
+            margin-bottom: 1%;
+            background-color: aqua;
+            text-align: center;
+        }
+        #header{
+            text-align: center;
+            clear: left;
+            width: 100%;
+            height: 30px;
+            background-color: aqua;
+            text-align: center;
+        }
+        #text{
+            margin-top: 1%;
+            width: 100%;
+            height: 30px;
+            background-color: aqua;
+            text-align: center;
+            margin-bottom: 1%;
+        }
+        #a1{
+            float: left;
+            width: 33%;
+            margin-right: 0.5%;
+            background-color: aqua;
+            margin-bottom: 1%;
+            height: 300px;
+        }
+        #a2{
+            float: left;
+            width: 33%;
+            background-color: aqua;
+            margin-right: 0.5%;
+            margin-bottom: 1%;
+            height: 300px;
+        }
+
+        #a3{
+            height: 300px;
+            float: left;
+            width: 33%;
+            background-color: aqua;
+            margin-bottom: 1%;
+        }
+        #footer{
+            clear: both;
+            width: 100%;
+            background-color: aqua;
+            text-align: center;
+        }
+        h3{
+            padding: 7%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div id="logo">Logo</div>
+        <div id="navigation">Navigation</div>
+    </div>
+    <div id="header">Header</div>
+    <div id="text">Intro Text Area</div>
+    <div class="box2">
+        <div id="a1"><h3>Box1</h3></div>
+        <div id="a2"><h3>Box2</h3></div>
+        <div id="a3"><h3>Box3</h3></div>
+    </div>
+    <div id="footer">Footer</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-TYPES</title>
+    <link type="text/css" href="style.css" rel="stylesheet"/>
+    <style>
+        /**{
+            margin: 0;
+            padding: 0;
+        }*/
+        #a2{
+            margin: 10px;
+            background-color: aqua;
+            color: brown;
+            width: 20vw;
+            text-align: right;
+        }
+    </style>
+    <!-- priority
+    1-important
+    2-inline
+    3-internal
+    4-external -->
+    <!-- Mostly we use External -->
+</head>
+<body>
+    <!-- INLINE CSS -->
+    <div id="a1" style="background-color: pink; color:blueviolet; width:10vw; text-align:center;" >Inline CSS</div>
+    <!-- INTERNAL CSS -->
+    <!-- This type of css we write with tag name in head in style -->
+    <div id="a2">
+        Internal css
+    </div>
+    <!-- EXTERNAL CSS -->
+    <div class="b">external</div>
+    <div class="a" style="background-color: pink;">external with important</div>
+    
+</body>
+</html>

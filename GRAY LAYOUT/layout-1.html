@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout-1</title>
+    <style>
+        *{
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        #logo{
+            width: 100%;
+            height: 50px;
+            background-color: blueviolet;
+        }
+        #navigation{
+            margin-top: 1%;
+            width: 100%;
+            height: 50px;
+            background-color: blueviolet;
+        }
+        #Header{
+            margin-top: 1%;
+            width: 100%;
+            height: 50px;
+            background-color: blueviolet;
+        }
+        /* This Float Left Consider Both Box WIdth*/
+        #sidebar{
+            float: left;
+            margin-top: 1%;
+            width: 50%;
+            height: 250px;
+            background-color: blueviolet;
+            margin-right: 1%;    
+            margin-bottom: 1%;    
+        }
+        #detail{
+            float: left;
+            margin-top: 1%;
+            width: 49%;
+            height: 250px;
+            background-color: blueviolet;
+            margin-bottom: 1%;
+        }
+        #fotter{
+            clear: left;
+            margin-top: 1%;
+            width: 100%;
+            height: 50px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div id="logo">logo</div>
+        <div id="navigation">Navigation</div>
+        <div id="Header">header</div>
+        <div class="box2">
+            <div id="sidebar">sidebar</div>
+            <div id="detail">Detail</div>
+        </div>
+        <div id="fotter">Fotter</div>
+    
+        
+    </div>
+</body>
+</html>

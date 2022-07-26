@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #logo{
+            width: 98%;
+            background-color: palevioletred;
+            height: 33px;
+            margin-bottom: 1%;
+            padding-left: 2%; /*pdding left 2 so we reduce width by 2% 100-2=98*/
+        }
+        #navigation{
+            width: 98%; /*100-1-1*/
+            background-color: palevioletred;
+            margin-bottom: 1%;
+            text-align: center;
+            padding: 1%; /*Four sides 1%*/
+        }
+        #header{
+            width: 88%;/*100-6-6*/
+            background-color: palevioletred;
+            margin-bottom: 1%;
+            text-align: center;
+            padding: 6%; /*it include in width*/
+        }
+        #sidearea{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*This 3 for take side area in between*/
+            float: left;
+            width: 33%;
+            background-color: palevioletred;
+            height: 150px;
+            margin-bottom: 1%;
+            margin-right: 1%;
+        }
+        #image{
+            float: left;
+            width: 66%;
+            height: 150px;
+            margin-bottom: 1%;
+            background-size: cover;
+            background-color: aqua;
+        }
+        img{       
+            width: 100%; /*It Take Image Tag As Main*/
+            background-size: cover;
+            height: 150px;
+            margin-bottom: 1%;
+        }
+        #footer{
+            clear: both;
+            width: 98%; /*100-1*/
+            background-color: palevioletred;
+            
+            padding: 1%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">LOGO</div>
+    <div id="navigation">NAVIGATION</div>
+    <div id="header">HEADER</div>
+    <div class="box">
+        <div id="sidearea">SIDE-AREA</div>
+        <div id="image">
+            <img src="rotate.jpg" alt="flower image"/>
+        </div>
+    </div>
+    <div id="footer">FOOTER</div>
+</body>
+</html>

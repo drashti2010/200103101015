@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMG ANIMATION</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        img{
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            opacity: 0.5;
+        }
+        .a:hover img {
+            transition-duration: 4s;
+            transform: rotate(360deg);
+        }
+        /* height is take like in img  and then center the word*/
+        .over{
+            color:black;
+            width: 400px;
+            height: 300px;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+        }       
+    </style>
+</head>
+<!-- Position Absolute Means it is not in the peg but it is show so that tag under the tag will take place under this tag
+Absolute positioned elements are removed from the normal flow, and can overlap elements. -->
+<body>
+    <div class="a">
+        <img src="img.jpg" alt="Demo Image" class="image">
+        <div class="over">
+            <h1>huiii</h1>
+        </div>
+       
+        
+    </div>
+    
+</body>
+</html>
